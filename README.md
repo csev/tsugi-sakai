@@ -2,25 +2,23 @@
 Running this in Sakai (SUPER EXPERIMENTAL)
 ------------------------------------------
 
-Check this out into the folder:
+Check this repo (tsugi-sakai) out into the folder:
 
-    trunk/basiclti/tsugi-java
+    trunk/basiclti/tsugi-sakai
 
 For now these are just rough notes - they won't even work yet.
 
-Checkout and compile
+Checkout and compile - this can be anywhere - it just puts a jar into the maven repo:
 
     https://github.com/csev/tsugi-java
 
-Copy the resulting jar into Tomcat's shared library.
-
-Add these to your sakai.properties:
+Add these to your Tomcat's sakai.properties:
 
     tsugi.factory.tsugiClassName=org.sakaiproject.tsugi.Tsugi_Sakai
 
-Edit the file:
+Edit the Sakai file:
 
-kernel/component-manager/src/main/bundle/org/sakaiproject/config/sakai-configuration.xml
+    kernel/component-manager/src/main/bundle/org/sakaiproject/config/sakai-configuration.xml
 
 Add two lines:
 
@@ -33,17 +31,19 @@ Add two lines:
             </map>
         </property>
 
-And recompile kernel.  By the way we need a bettter way to do this - note to self.
+And recompile kernel.  
 
-Come in and run maven so as to get the resulting jar file in shared.
+NOTE TO SELF: By the way we need a bettter way to to set System roperties from sakai.properties.
 
 Then check out: 
 
-    cd basiclti
-    git clone https://github.com/csev/tsugi-sakai
+    cd trunk/basiclti
+    git clone https://github.com/csev/tsugi-java-servlet
 
-Edit the pom.xml and add / uncomment the
-outputDirectory line to point to the Sakai Tomcat:
+Copy the file tsugi-sakai/pom-sakai-servlet.xml into tsugi-java-servlet
+
+Edit the tsugi-java-servlet/pom.xml and add / uncomment the
+outputDirectory line to point to your Sakai Tomcat:
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -54,7 +54,7 @@ outputDirectory line to point to the Sakai Tomcat:
         </configuration>
       </plugin>
 
-To compile and delpoy into the running Sakai:
+To compile tsugi-java-servlet and deploy into the running Sakai:
 
     mvn clean install war:war
 
@@ -64,6 +64,12 @@ To navigate to the app go to:
 
     http://localhost:8080/tsugi-java-servlet
 
-And of course it will fail miserably - but that s a start.
+If you get 500 error that says:
+
+    The Sakai implementation of the Tsugi APIs are not fully implemented
+
+You did it all correctly.
+
+
 
 

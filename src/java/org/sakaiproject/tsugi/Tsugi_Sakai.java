@@ -28,7 +28,7 @@ public class Tsugi_Sakai extends BaseTsugi implements Tsugi
         BaseLaunch launch = new BaseLaunch();
         launch.complete = false;
         launch.valid = false;
-        launch.error_message = "Not yet implemented";
+        launch.error_message = "The Sakai implementation of the Tsugi APIs are not fully implemented";
         return launch;
     }
 
