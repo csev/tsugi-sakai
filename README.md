@@ -6,8 +6,6 @@ Check this repo (tsugi-sakai) out into the folder:
 
     trunk/basiclti/tsugi-sakai
 
-For now these are just rough notes - they won't even work yet.
-
 Checkout and compile the Tsugi Java library - this can be anywhere in your folder 
 tree - "mvn clean install" just puts a jar into the maven repo that is needed for tsugi-sakai.
 
