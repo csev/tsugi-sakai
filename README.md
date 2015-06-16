@@ -51,7 +51,8 @@ outputDirectory line to point to *your* Sakai Tomcat:
           <outputDirectory>/Users/csev/dev/sakai-scripts/apache-tomcat-8.0.23</outputDirectory>
         </configuration>
       </plugin>
-I wish there were a cleaner way to do this on the following mvn command, that would be preferable.
+
+I wish there were a cleaner way to do this on the following mvn command, that would be preferable - see https://jira.sakaiproject.org/browse/KNL-1361
 
 To compile tsugi-java-servlet and deploy into the running Sakai:
 
