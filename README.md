@@ -2,7 +2,7 @@
 Running this in Sakai (SUPER EXPERIMENTAL)
 ------------------------------------------
 
-Not - this just a skeleton - there is no implementations - just enough to get the right 
+Note - this just a skeleton - there is no implementations - just enough to get the right 
 Tsugi implementation class loaded.  But there is nothing in that implementation class.
 
 Check this repo (tsugi-sakai) out into the folder:
